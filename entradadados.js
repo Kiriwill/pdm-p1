@@ -17,19 +17,20 @@ function EntradaDeDados(props) {
     <View style={styles.container}>
       <TextInput
         style={styles.inputField}  
-        placeholder="digite a descricao do Item"
+        placeholder="Digite a descricao"
         onChangeText={capturarDescricao}
         value={descricaoItem}>
       </TextInput>
       
       <TextInput 
         style={styles.inputField}
-        placeholder="Digite o Fabricante do Item"
+        placeholder="Digite o Fabricante"
         onChangeText={capturarFabricante}
         value={fabricanteItem}>
       </TextInput>
 
-      <Button
+      <Button 
+        style={styles.button}
         title="Cadastrar"
         onPress={ () => props.campos({
             descricao : descricaoItem, 
@@ -44,15 +45,32 @@ function EntradaDeDados(props) {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 15,
+    width: '80%',
   },
 
   inputField: {
-    padding: 12,
-    borderColor: '#000',
-    borderWidth: 2,
-    marginBottom: 4,
-    textAlign: 'center'
-    }
+    textAlign: 'center',
+    paddingBottom: 12,
+    paddingTop: 12,
+    paddingRight: 30,
+    paddingLeft: 30,
+    backgroundColor: '#f0f8ff',
+    borderColor: '#FFF',
+    marginBottom: 8,
+    borderRadius: 8,
+    width: '100%',
+    justifyContent: 'space-around',
+
+  },
+
+  button: {
+    paddingBottom: 12,
+    paddingTop: 12,
+    paddingRight: 30,
+    paddingLeft: 30,
+  }
+
+    
 });
 
 

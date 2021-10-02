@@ -10,7 +10,7 @@ class ExibeItens extends React.Component {
     render(){
         console.log('listaItems: ',this.props.listaItems)
         return (
-            <View style={{marginTop:2 }}>
+            <View style={styles.container}>
             <FlatList
                 data={this.props.listaItems}
                 renderItem={(item) => (
@@ -25,6 +25,13 @@ class ExibeItens extends React.Component {
 }
 
 const styles = StyleSheet.create({
+
+    container: {
+        marginBottom: 15,
+        width: '80%',
+        textAlign: 'center',
+      },
+
     'itemLista': {
         paddingBottom: 12,
         paddingTop: 12,
