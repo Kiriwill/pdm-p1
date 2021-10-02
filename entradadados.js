@@ -32,10 +32,14 @@ function EntradaDeDados(props) {
       <Button 
         style={styles.button}
         title="Cadastrar"
-        onPress={ () => props.campos({
-            descricao : descricaoItem, 
-            fabricante : fabricanteItem,
-          })
+        onPress={ () => {
+            props.campos({
+                descricao : descricaoItem, 
+                fabricante : fabricanteItem,
+              });
+            setDescricao('');
+            setFabricante('');
+            }
         }
       /> 
     </View>
