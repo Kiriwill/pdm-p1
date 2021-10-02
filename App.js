@@ -1,15 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React,  {useState} from 'react';
 import { FlatList, StyleSheet, Button, Text, TextInput,  View } from 'react-native';
+import ExibeItems from './exibeitems'
+import EntradaDeDados from './entradadados'
 
 export default function App() {
+  const [listaItems, setlistaItems] = useState([])
+
+  const setCampos = (campos) => {
+    let l = [...listaItems, campos]
+    setlistaItems(l)
+  }
+
   return (
     <View style={styles.container}>
-      <Text>TESTE</Text>
+      <EntradaDeDados campos={setCampos}/>
+      <ExibeItems listaItems={listaItems}/>
     </View>
   );
 }
-/*teste2*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
